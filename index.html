@@ -25,43 +25,43 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 ::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
 /* SIDEBAR */
-.sb{width:var(--sidebar-w);height:100vh;background:var(--white);border-right:1px solid var(--border);
+.sb{width:var(--sidebar-w);height:100vh;background:#0f172a;border-right:1px solid #1e293b;
   display:flex;flex-direction:column;position:fixed;top:0;left:0;z-index:100;overflow-y:auto;}
-.sb-brand{padding:16px;border-bottom:1px solid var(--border);}
-.sb-badge{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+.sb-brand{padding:16px;border-bottom:1px solid #1e293b;}
+.sb-badge{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#C5192D,#a8142a);
   display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;
-  margin-bottom:8px;box-shadow:0 4px 12px rgba(59,130,246,.3);}
-.sb-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.sb-sub{font-size:11px;color:var(--text3);}
-.sb-sec{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text3);padding:12px 16px 4px;}
+  margin-bottom:8px;box-shadow:0 4px 12px rgba(197,25,45,.4);overflow:hidden;}
+.sb-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.sb-sub{font-size:11px;color:#94a3b8;}
+.sb-sec{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#64748b;padding:12px 16px 4px;}
 .sbi{display:flex;align-items:center;gap:8px;padding:7px 12px;margin:1px 6px;border-radius:var(--r2);
   cursor:pointer;border:1px solid transparent;transition:all .15s;}
-.sbi:hover{background:var(--bg2);}
-.sbi.active{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#bfdbfe;}
+.sbi:hover{background:#1e293b;}
+.sbi.active{background:linear-gradient(135deg,#1d4ed8,#1e40af);border-color:#3b82f6;}
 .sb-dot{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;
   font-size:11px;font-weight:800;color:#fff;flex-shrink:0;}
 .sb-tx{flex:1;min-width:0;}
-.sb-name2{font-size:12px;color:var(--text);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;}
-.sb-code{font-size:10px;color:var(--text3);font-weight:600;margin-bottom:1px;}
-.sb-name{font-size:12px;color:var(--text);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sb-name2{font-size:12px;color:#e2e8f0;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;}
+.sb-code{font-size:10px;color:#94a3b8;font-weight:600;margin-bottom:1px;}
+.sb-name{font-size:12px;color:#e2e8f0;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 /* sidebar status pills — clear labels */
 .sp{font-size:9px;font-weight:700;padding:2px 6px;border-radius:20px;flex-shrink:0;white-space:nowrap;}
-.sp-g{background:var(--green-bg);color:var(--green);}
-.sp-y{background:var(--yellow-bg);color:var(--yellow);}
-.sp-r{background:var(--red-bg);color:var(--red);}
-.sp-gr{background:var(--gray-bg);color:var(--gray);}
-.sb-foot{padding:12px 16px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);margin-top:auto;}
+.sp-g{background:rgba(34,197,94,.2);color:#4ade80;}
+.sp-y{background:rgba(234,179,8,.2);color:#fbbf24;}
+.sp-r{background:rgba(239,68,68,.2);color:#f87171;}
+.sp-gr{background:rgba(148,163,184,.2);color:#94a3b8;}
+.sb-foot{padding:12px 16px;border-top:1px solid #1e293b;font-size:11px;color:#64748b;margin-top:auto;}
 /* TOPBAR */
 .main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;}
-.topbar{background:var(--white);border-bottom:1px solid var(--border);padding:12px 24px;
-  display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:var(--sh);}
+.topbar{background:#0f172a;border-bottom:1px solid #1e293b;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.25);}
 .tb-l{display:flex;align-items:center;gap:10px;}
 .tb-ico{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);
   display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;}
-.tb-title{font-size:14px;font-weight:700;color:var(--text);}
-.tb-sub{font-size:11px;color:var(--text3);margin-top:1px;}
-.tb-chip{display:flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);
-  border-radius:20px;padding:4px 12px;font-size:11px;color:var(--text2);}
+.tb-title{font-size:14px;font-weight:700;color:#fff;}
+.tb-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.tb-chip{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:4px 12px;font-size:11px;color:#cbd5e1;}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 /* CONTENT */
@@ -104,6 +104,15 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .stat-card .sub{font-size:11px;color:var(--text3);}
 .v-blue{color:var(--blue);}.v-green{color:var(--green);}.v-yellow{color:var(--yellow);}
 .v-red{color:var(--red);}.v-gray{color:var(--gray);}
+/* Solid-color stat card variants (reference-style) */
+.stat-card.sc-blue{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-color:transparent;}
+.stat-card.sc-green{background:linear-gradient(135deg,#15803d,#22c55e);border-color:transparent;}
+.stat-card.sc-yellow{background:linear-gradient(135deg,#b45309,#eab308);border-color:transparent;}
+.stat-card.sc-red{background:linear-gradient(135deg,#b91c1c,#ef4444);border-color:transparent;}
+.stat-card.sc-gray{background:linear-gradient(135deg,#475569,#64748b);border-color:transparent;}
+.stat-card.sc-blue .lbl,.stat-card.sc-green .lbl,.stat-card.sc-yellow .lbl,.stat-card.sc-red .lbl,.stat-card.sc-gray .lbl{color:rgba(255,255,255,.85);}
+.stat-card.sc-blue .val,.stat-card.sc-green .val,.stat-card.sc-yellow .val,.stat-card.sc-red .val,.stat-card.sc-gray .val{color:#fff;}
+.stat-card.sc-blue .sub,.stat-card.sc-green .sub,.stat-card.sc-yellow .sub,.stat-card.sc-red .sub,.stat-card.sc-gray .sub{color:rgba(255,255,255,.75);}
 /* SECTION TITLE */
 .sec-title{font-size:14px;font-weight:700;color:var(--text);margin:18px 0 10px;
   display:flex;align-items:center;gap:8px;}
@@ -181,6 +190,13 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .kval{font-size:30px;font-weight:800;margin-bottom:4px;line-height:1;}
 .klbl{font-size:12px;color:var(--text3);}
 .kpi-green{color:var(--green);}.kpi-yellow{color:var(--yellow);}.kpi-red{color:var(--red);}
+/* Solid-color KPI box variants (reference-style, matches overview stat cards) */
+.kbox.kb-green{background:linear-gradient(135deg,#15803d,#22c55e);border-color:transparent;}
+.kbox.kb-yellow{background:linear-gradient(135deg,#b45309,#eab308);border-color:transparent;}
+.kbox.kb-red{background:linear-gradient(135deg,#b91c1c,#ef4444);border-color:transparent;}
+.kbox.kb-gray{background:linear-gradient(135deg,#475569,#64748b);border-color:transparent;}
+.kbox.kb-green .kval,.kbox.kb-yellow .kval,.kbox.kb-red .kval,.kbox.kb-gray .kval{color:#fff;}
+.kbox.kb-green .klbl,.kbox.kb-yellow .klbl,.kbox.kb-red .klbl,.kbox.kb-gray .klbl{color:rgba(255,255,255,.85);}
 /* PRESERVED SUBGOAL STYLES */
 .grid-2,.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 .card-title{font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.4px;margin-bottom:12px;}
@@ -222,18 +238,18 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .issue-card .issue-agency{font-size:11px;color:var(--text3);}
 /* Panel-list layout (project/development 2-column, bullet style) */
 .panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-.panel-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);}
-.panel-box h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:7px;}
+.panel-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);overflow:hidden;}
+.panel-box h3{font-size:14px;font-weight:700;color:#fff;margin:-18px -20px 14px;padding:14px 20px;display:flex;align-items:center;gap:7px;background:var(--blue);border-radius:var(--r) var(--r) 0 0;}
 .panel-list{list-style:none;margin:0;padding:0;}
-.panel-list li{margin-bottom:14px;padding-left:18px;position:relative;font-size:13px;line-height:1.7;color:var(--text2);}
+.panel-list li{margin-bottom:10px;padding:12px 14px;position:relative;font-size:13px;line-height:1.7;color:var(--text2);
+  background:var(--card);border:1px solid var(--border);border-radius:8px;}
 .panel-list li:last-child{margin-bottom:0;}
-.panel-list li::before{content:"•";position:absolute;left:0;top:0;color:var(--blue);font-weight:700;}
-.panel-list li strong{color:var(--text);font-weight:700;}
-.panel-list li .agency{color:var(--text3);font-weight:400;font-size:12px;}
-.panel-list li .detail{display:block;margin-top:2px;color:var(--text2);}
-.issue-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);margin-bottom:16px;}
-.issue-box h3{font-size:14px;font-weight:700;color:#c2410c;margin-bottom:14px;display:flex;align-items:center;gap:7px;}
-.issue-box .panel-list li::before{color:#ea580c;}
+.panel-list li strong{display:block;color:var(--text);font-weight:700;font-size:13.5px;margin-bottom:4px;}
+.panel-list li .agency{display:block;color:var(--text3);font-weight:600;font-size:11.5px;margin-top:2px;}
+.panel-list li .detail{display:block;color:var(--text2);font-size:12.5px;margin-top:3px;}
+.panel-grid .panel-box:nth-child(2) h3{background:var(--green);}
+.issue-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);margin-bottom:16px;overflow:hidden;}
+.issue-box h3{font-size:14px;font-weight:700;color:#fff;margin:-18px -20px 14px;padding:14px 20px;display:flex;align-items:center;gap:7px;background:#ea580c;border-radius:var(--r) var(--r) 0 0;}
 /* ── O-NET School Page ── */
 .filter-bar{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;box-shadow:var(--sh);}
 .filter-group{display:flex;align-items:center;gap:7px;}
@@ -286,7 +302,9 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 <body>
 <aside class="sb">
   <div class="sb-brand">
-    <div class="sb-badge">4</div>
+    <div class="sb-badge">
+      <img src="data:image/webp;base64,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" alt="SDG 4: Quality Education" width="64" height="64" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:10px">
+    </div>
     <div class="sb-title">SDG4 Dashboard</div>
     <div class="sb-sub">จังหวัดเชียงใหม่</div>
   </div>
@@ -302,7 +320,7 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
   </div>
     <div class="sbi" onclick="showPage('onet-school',this)" style="padding-left:36px">
     <div class="sb-dot" style="background:#475569;font-size:9px;width:22px;height:22px">📍</div>
-    <div class="sb-name2" style="font-size:11.5px;color:var(--text2)">O-NET รายโรงเรียน</div>
+    <div class="sb-name2" style="font-size:11.5px;color:#94a3b8">O-NET รายโรงเรียน</div>
   </div>
     <div class="sbi" onclick="showPage('goal42',this)">
     <div class="sb-dot" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8)">4.2</div>
@@ -341,7 +359,7 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
     <div class="sb-name2">คุณภาพครู</div>
   </div>
 
-  <div class="sb-foot">🏛 สำนักงานศึกษาธิการ จ.เชียงใหม่<br>ปีงบประมาณ 2568</div>
+  <div class="sb-foot">🏛 สำนักงานศึกษาธิการ จ.เชียงใหม่<br>ปีงบประมาณ 2568<br><a href="https://www.un.org/sustainabledevelopment/news/communications-material/" target="_blank" rel="noopener" style="color:#64748b;text-decoration:underline">SDG Logo Guidelines (UN)</a></div>
 </aside>
 
 <main class="main">
@@ -382,11 +400,11 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
     </div>
 
     <div class="stat-row">
-      <div class="stat-card"><div class="lbl">ตัวชี้วัดทั้งหมด</div><div class="val v-blue">36</div><div class="sub">รายการ</div></div>
-      <div class="stat-card"><div class="lbl">บรรลุเป้าหมาย</div><div class="val v-green">7</div><div class="sub">สถานะสีเขียว</div></div>
-      <div class="stat-card"><div class="lbl">ใกล้บรรลุเป้าหมาย</div><div class="val v-yellow">13</div><div class="sub">สถานะสีเหลือง</div></div>
-      <div class="stat-card"><div class="lbl">ต่ำกว่าเป้าหมายมาก</div><div class="val v-red">14</div><div class="sub">สถานะสีแดง</div></div>
-      <div class="stat-card"><div class="lbl">ไม่มีข้อมูล</div><div class="val v-gray">2</div><div class="sub">สถานะสีเทา</div></div>
+      <div class="stat-card sc-blue"><div class="lbl">ตัวชี้วัดทั้งหมด</div><div class="val v-blue">36</div><div class="sub">รายการ</div></div>
+      <div class="stat-card sc-green"><div class="lbl">บรรลุเป้าหมาย</div><div class="val v-green">7</div><div class="sub">สถานะสีเขียว</div></div>
+      <div class="stat-card sc-yellow"><div class="lbl">ใกล้บรรลุเป้าหมาย</div><div class="val v-yellow">13</div><div class="sub">สถานะสีเหลือง</div></div>
+      <div class="stat-card sc-red"><div class="lbl">ต่ำกว่าเป้าหมายมาก</div><div class="val v-red">14</div><div class="sub">สถานะสีแดง</div></div>
+      <div class="stat-card sc-gray"><div class="lbl">ไม่มีข้อมูล</div><div class="val v-gray">2</div><div class="sub">สถานะสีเทา</div></div>
     </div>
 
     <div class="ov-summary" style="border-left-color:#7c3aed;background:#faf5ff">
@@ -973,10 +991,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>ผลสัมฤทธิ์ NT ป.3 มีแนวโน้มดีขึ้น และปีการศึกษา 2567 NT อ่านผ่านเป้า 2568 แล้ว (68.49%) · O-NET เชียงใหม่สูงกว่าประเทศในระดับ ม.3 และ ม.6 · แต่อัตราการสำเร็จ ม.ต้น (82.68%) และ ม.ปลาย (80.94%) ยังต่ำกว่าเป้า 100% มากต้องเร่งแก้ปัญหาออกกลางคัน</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">4</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">2</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">8</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">4</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">2</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">8</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -1255,10 +1273,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>พัฒนาการเด็ก 0-5 ปีสมวัยลดลงต่อเนื่อง 5 ปี จาก 84.32% เหลือ 67.02% ต่ำกว่าเป้า 85% อย่างมีนัยสำคัญ · อัตราเข้าเรียนก่อนประถมใกล้เคียงเป้าแล้ว (85.88% vs 86.34%) · ต้องเร่งบูรณาการพัฒนาการเด็กร่วมกับสาธารณสุขและท้องถิ่น</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">1</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">1</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -1378,10 +1396,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>สัดส่วนอาชีวศึกษา ม.ปลาย 22% ต่ำกว่าเป้า 28% และห่างจากเป้าระยะยาว 50% มาก · อัตราเรียนต่ออุดมศึกษา 6.54% ใกล้เป้า 6.68% · ต้องเร่งยกระดับภาพลักษณ์อาชีวะและพัฒนาหลักสูตรให้ตรงตลาดแรงงาน</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">1</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">1</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -1504,10 +1522,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>การใช้อินเทอร์เน็ตเพิ่มขึ้นต่อเนื่อง (69.99%→86.87%) แต่ยังต่ำกว่าเป้า 91.09% · การใช้และครอบครองโทรศัพท์มือถือใกล้เคียงเป้าหมาย · ต้องลดช่องว่างดิจิทัลพื้นที่ห่างไกล</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">3</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">3</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -1637,10 +1655,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>GPI ระดับ ป. (0.93) และ ม.ต้น (0.92) ห่างจาก 1 เพียง 0.07-0.08 จัดเป็นสถานะใกล้บรรลุ · GPI ม.ปลาย (1.23) สะท้อนนักเรียนหญิงมากกว่าชาย · GPI อุดมศึกษา (0.68) ต่ำที่สุด หมายถึงชายมีสัดส่วนสำเร็จอุดมศึกษาต่ำกว่าหญิง · ต้องวิเคราะห์สาเหตุและออกมาตรการเฉพาะ</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">2</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">2</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">2</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">2</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -1787,10 +1805,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>อัตราการรู้หนังสือ 99.83% ใกล้เป้า 100% มาก · แนวโน้มดีขึ้นต่อเนื่อง (94.37%→99.83%) · เหลือเพียงกลุ่มชาติพันธุ์และพื้นที่ห่างไกลที่ต้องเข้าถึงเพิ่มเติม</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -1900,10 +1918,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>บรรลุเป้าหมาย 100% ทุกปี ตั้งแต่ปี 2566 · สถานศึกษาทุกแห่งมีหลักสูตรความเป็นพลเมืองแล้ว · ต้องพัฒนาคุณภาพเนื้อหาและวัดผลการเรียนรู้จริงจากผู้เรียน</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">1</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">0</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">1</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">0</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -2017,10 +2035,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>น้ำดื่มและสิ่งอำนวยล้างมือบรรลุ 100% แล้ว · ไฟฟ้า 99.43% ใกล้เป้า · แต่คอมพิวเตอร์ (42.9%) และอินเทอร์เน็ต (56.47%) ยังต่ำกว่าเป้า 100% มาก ต้องเร่งลงทุนโครงสร้างพื้นฐานดิจิทัล</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">2</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">2</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">2</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">1</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">2</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">0</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -2174,10 +2192,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>ยังไม่มีข้อมูลตัวชี้วัด ODA ทุนการศึกษา ซึ่งเป็นความรับผิดชอบของกระทรวงการต่างประเทศ · จังหวัดเชียงใหม่ดำเนินการผ่านกองทุน กสศ. และกองทุนปฏิรูปการศึกษาเชียงใหม่</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">0</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">1</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">0</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">1</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="sec-title">📋 ตัวชี้วัด – เปรียบเทียบผลจริงกับเป้าหมาย 2568</div>
@@ -2248,10 +2266,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <p>ครูคุณวุฒิ ป. 92.7% และ ม. 91.71% ต่ำกว่าเป้า 100% · ข้อมูลการอบรมยังไม่ครบ · ต้องพัฒนาระบบ PLC และ ID Plan ให้เข้มแข็งขึ้น</p>
     </div>
 <div class="pg-kpi">
-      <div class="kbox"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-yellow">2</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
-      <div class="kbox"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
-      <div class="kbox"><div class="kval" style="color:var(--text3)">2</div><div class="klbl">ไม่มีข้อมูล</div></div>
+      <div class="kbox kb-green"><div class="kval kpi-green">0</div><div class="klbl">ตัวชี้วัดที่บรรลุ</div></div>
+      <div class="kbox kb-yellow"><div class="kval kpi-yellow">2</div><div class="klbl">ตัวชี้วัดที่ใกล้บรรลุ</div></div>
+      <div class="kbox kb-red"><div class="kval kpi-red">0</div><div class="klbl">ตัวชี้วัดที่ต้องเร่งรัด</div></div>
+      <div class="kbox kb-gray"><div class="kval" style="color:#fff">2</div><div class="klbl">ไม่มีข้อมูล</div></div>
     </div>
 
     <div class="grid-2">
@@ -2443,14 +2461,14 @@ mkChart('radarChart','radar',{
   labels:['4.1\nคุณภาพ','4.2\nปฐมวัย','4.3\nอาชีวะ','4.4\nดิจิทัล','4.5\nGPI','4.6\nรู้หนังสือ','4.7\nพลเมือง','4.a\nโครงสร้าง','4.c\nครู'],
   datasets:[
     {label:'ผลจริง 2568 (%ของเป้า)',data:[77.3,89.2,88.2,97.6,82.5,99.8,100.0,79.8,92.2],
-     backgroundColor:'rgba(37,99,235,0.1)',borderColor:'#2563eb',borderWidth:2,
-     pointBackgroundColor:'#2563eb',pointRadius:4},
+     backgroundColor:'rgba(37,99,235,0.35)',borderColor:'#2563eb',borderWidth:3,
+     pointBackgroundColor:'#2563eb',pointBorderColor:'#fff',pointBorderWidth:2,pointRadius:5,pointHoverRadius:7},
     {label:'เป้าหมาย 100%',data:[100,100,100,100,100,100,100,100,100],
-     backgroundColor:'rgba(0,0,0,.02)',borderColor:'rgba(100,130,170,.3)',borderWidth:1,borderDash:[4,4],pointRadius:0}
+     backgroundColor:'rgba(0,0,0,0)',borderColor:'#f97316',borderWidth:1.5,borderDash:[6,4],pointRadius:0}
   ]
 },{scales:{r:{min:0,max:120,
-  ticks:{stepSize:30,color:'#94a3b8',backdropColor:'transparent',font:{size:10}},
-  grid:{color:gc},angleLines:{color:gc},pointLabels:{color:'#64748b',font:{size:10}}}}});
+  ticks:{stepSize:30,color:'#64748b',backdropColor:'transparent',font:{size:10,weight:'600'}},
+  grid:{color:'rgba(100,130,170,0.25)'},angleLines:{color:'rgba(100,130,170,0.25)'},pointLabels:{color:'#334155',font:{size:11,weight:'700'}}}}});
 
 // GOAL 4.1 CHARTS
 // ==========================================
