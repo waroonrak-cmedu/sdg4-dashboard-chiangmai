@@ -903,6 +903,7 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
         </select>
       </div>
       <button class="btn-export" id="export-excel-btn" onclick="exportOnetSchoolData()">📥 Export Excel</button>
+      <button class="btn-export" id="export-coords-btn" onclick="exportGeocodedCoords()" style="background:#16a34a">📍 Export พิกัด</button>
       <div class="geo-status" id="geo-status-wrap" style="display:none">
         <span id="geo-status-text">กำลังระบุพิกัดโรงเรียน...</span>
         <div class="geo-bar-track"><div class="geo-bar-fill" id="geo-bar-fill" style="width:0%"></div></div>
@@ -2928,6 +2929,24 @@ async function startGeocoding(){
   document.getElementById('geo-status-text').textContent = `ระบุพิกัดเสร็จสมบูรณ์ ${geocodeDone}/${total}`;
   setTimeout(()=>{ document.getElementById('geo-status-wrap').style.display='none'; }, 4000);
   updateMapMarkers(currentFilteredSchools);
+}
+
+function exportGeocodedCoords(){
+  const count = Object.keys(schoolCoords).length;
+  if(count===0){
+    alert('ยังไม่มีพิกัดที่ระบุสำเร็จเลย กรุณารอสักครู่ให้ระบบระบุพิกัดก่อน');
+    return;
+  }
+  const blob = new Blob([JSON.stringify(schoolCoords, null, 0)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'school-coords.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  alert(`ดาวน์โหลดพิกัดสำเร็จ ${count}/${ONET_SCHOOLS.length} แห่ง\\nส่งไฟล์ school-coords.json กลับมาให้ผู้พัฒนาเพื่อฝังเข้า Dashboard ค่ะ`);
 }
 
 function exportOnetSchoolData(){
