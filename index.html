@@ -907,6 +907,7 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <div class="geo-status" id="geo-status-wrap" style="display:none">
         <span id="geo-status-text">กำลังระบุพิกัดโรงเรียน...</span>
         <div class="geo-bar-track"><div class="geo-bar-fill" id="geo-bar-fill" style="width:0%"></div></div>
+        <button class="btn-export" id="geo-resume-btn" onclick="resumeGeocoding()" style="background:#7c3aed;padding:4px 10px;font-size:11px;display:none">🔄 ทำต่อ</button>
       </div>
     </div>
 
@@ -2871,16 +2872,29 @@ async function geocodeSchool(school){
   const query = encodeURIComponent(`${school.name} ${school.district} เชียงใหม่ ประเทศไทย`);
   const url = `https://nominatim.openstreetmap.org/search?format=json&q=${query}&limit=1&countrycodes=th`;
   try{
-    const res = await fetch(url,{headers:{'Accept-Language':'th'}});
+    const controller = new AbortController();
+    const timeoutId = setTimeout(()=>controller.abort(), 8000);
+    const res = await fetch(url,{headers:{'Accept-Language':'th'}, signal:controller.signal});
+    clearTimeout(timeoutId);
     const data = await res.json();
     if(data && data.length){
       return {lat:parseFloat(data[0].lat),lon:parseFloat(data[0].lon)};
     }
-  }catch(e){ /* network/CORS issue, skip */ }
+  }catch(e){ /* network/CORS/timeout issue, skip this school */ }
   return null;
 }
 
+let geocodeRunId = 0;
+let geocodeWatchdog = null;
+
+function resumeGeocoding(){
+  document.getElementById('geo-resume-btn').style.display = 'none';
+  geocodeRunId++; // invalidate any stalled previous run
+  startGeocoding();
+}
+
 async function startGeocoding(){
+  const myRunId = ++geocodeRunId;
   // Try restoring from storage first
   try{
     const cached = localStorage.getItem('sdg4-school-coords-v1');
@@ -2904,9 +2918,29 @@ async function startGeocoding(){
   }
 
   document.getElementById('geo-status-wrap').style.display='flex';
+  document.getElementById('geo-resume-btn').style.display='none';
   const total = ONET_SCHOOLS.length;
 
+  // Watchdog: if no progress happens for 15s, show the manual resume button
+  if(geocodeWatchdog) clearInterval(geocodeWatchdog);
+  let lastDone = geocodeDone;
+  let stallSeconds = 0;
+  geocodeWatchdog = setInterval(()=>{
+    if(myRunId !== geocodeRunId){ clearInterval(geocodeWatchdog); return; }
+    if(geocodeDone === lastDone){
+      stallSeconds += 3;
+      if(stallSeconds >= 15){
+        document.getElementById('geo-resume-btn').style.display = 'inline-flex';
+        clearInterval(geocodeWatchdog);
+      }
+    }else{
+      lastDone = geocodeDone;
+      stallSeconds = 0;
+    }
+  }, 3000);
+
   for(let i=0;i<allSchools.length;i++){
+    if(myRunId !== geocodeRunId) return; // a newer run (manual resume) has taken over, stop this stale loop
     const school = allSchools[i];
     const coord = await geocodeSchool(school);
     if(coord){ schoolCoords[school.code] = coord; }
@@ -2925,6 +2959,7 @@ async function startGeocoding(){
     await new Promise(r=>setTimeout(r, 1050));
   }
 
+  if(geocodeWatchdog) clearInterval(geocodeWatchdog);
   try{ localStorage.setItem('sdg4-school-coords-v1', JSON.stringify(schoolCoords)); }catch(e){}
   document.getElementById('geo-status-text').textContent = `ระบุพิกัดเสร็จสมบูรณ์ ${geocodeDone}/${total}`;
   setTimeout(()=>{ document.getElementById('geo-status-wrap').style.display='none'; }, 4000);
