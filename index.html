@@ -53,8 +53,9 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .sb-foot{padding:12px 16px;border-top:1px solid #1e293b;font-size:11px;color:#64748b;margin-top:auto;}
 /* TOPBAR */
 .main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;}
-.topbar{background:#0f172a;border-bottom:1px solid #1e293b;padding:12px 24px;
+.topbar{background:#0f172a;border-bottom:1px solid #1e293b;padding:10px 24px;
   display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+.topbar.no-border{border-bottom:1px solid rgba(255,255,255,.06);box-shadow:none;}
 .tb-l{display:flex;align-items:center;gap:10px;}
 .tb-ico{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);
   display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;}
@@ -62,10 +63,14 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .tb-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
 .tb-chip{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
   border-radius:20px;padding:4px 12px;font-size:11px;color:#cbd5e1;}
+.tb-crit-g{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3);color:#86efac;font-weight:600;}
+.tb-crit-y{background:rgba(234,179,8,.15);border-color:rgba(234,179,8,.3);color:#fde68a;font-weight:600;}
+.tb-crit-r{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.3);color:#fca5a5;font-weight:600;}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 /* CONTENT */
 .content{padding:20px 24px;flex:1;}
+.page.active:has(.pg-banner:first-child){padding-top:0;}
 .page{display:none;}
 .page.active{display:block;animation:fu .25s ease;}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -80,16 +85,22 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .chart-wrap{position:relative;width:100%;height:280px;}
 .chart-wrap.sm{height:220px;}
 /* OVERVIEW BANNER */
-.ov-banner{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 60%,#2563eb 100%);
-  border-radius:var(--r);padding:28px 32px;margin-bottom:20px;position:relative;overflow:hidden;}
-.ov-banner::before,.ov-banner::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.06);}
-.ov-banner::before{right:-40px;top:-40px;width:200px;height:200px;}
-.ov-banner::after{right:80px;bottom:-50px;width:140px;height:140px;}
-.ov-banner h1{font-size:22px;font-weight:800;color:#fff;margin-bottom:6px;position:relative;}
-.ov-banner p{font-size:13px;color:rgba(255,255,255,.8);position:relative;}
-.ov-chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;position:relative;}
-.ov-chip{background:rgba(255,255,255,.15);color:#fff;border-radius:20px;padding:4px 12px;font-size:12px;
-  font-weight:500;border:1px solid rgba(255,255,255,.25);}
+.ov-banner{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#1d4ed8 100%);
+  border-radius:0 0 var(--r) var(--r);padding:32px 32px 28px;margin:-1px 0 20px;position:relative;overflow:hidden;}
+.ov-banner::before{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.05);}
+.ov-banner::after{content:'';position:absolute;right:100px;bottom:-70px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.03);}
+.ov-banner-inner{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.ov-banner h1{font-size:28px;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.25;}
+.ov-banner p{font-size:13px;color:rgba(255,255,255,.72);line-height:1.7;max-width:600px;}
+.ov-hero-badge{width:96px;height:96px;border-radius:16px;background:#C5192D;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 8px 32px rgba(197,25,45,.4);border:2px solid rgba(255,255,255,.15);}
+.ov-chips{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+.ov-chip{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;}
+.ov-chip-g{background:rgba(34,197,94,.2);color:#86efac;border-color:rgba(34,197,94,.3);}
+.ov-chip-y{background:rgba(234,179,8,.2);color:#fde68a;border-color:rgba(234,179,8,.3);}
+.ov-chip-r{background:rgba(239,68,68,.2);color:#fca5a5;border-color:rgba(239,68,68,.3);}
+.ov-stat-mini{display:flex;gap:20px;flex-shrink:0;align-items:center;}weight:500;border:1px solid rgba(255,255,255,.25);}
 /* OVERVIEW SUMMARY BOX */
 .ov-summary{background:#fff;border:1px solid var(--border);border-left:4px solid var(--blue);
   border-radius:var(--r);padding:16px 20px;margin-bottom:20px;box-shadow:var(--sh);}
@@ -166,11 +177,30 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .sumbox h3{font-size:12px;font-weight:700;color:#0369a1;margin-bottom:6px;display:flex;align-items:center;gap:5px;}
 .sumbox p{font-size:13px;color:#0f4c75;line-height:1.7;}
 /* LEGEND */
-.legend-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:center;font-size:12px;}
+.legend-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:center;font-size:12px}
+/* CRITERIA BOX */
+.criteria-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-bottom:14px;box-shadow:var(--sh);}
+.criteria-title{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:12px;}
+.criteria-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px;}
+@media(max-width:700px){.criteria-grid{grid-template-columns:repeat(2,1fr);}}
+.criteria-item{display:flex;flex-direction:column;gap:5px;padding:10px 12px;border-radius:8px;}
+.ci-green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.ci-yellow{background:#fefce8;border:1px solid #fde68a;}
+.ci-red{background:#fff1f2;border:1px solid #fecdd3;}
+.ci-gray{background:#f8fafc;border:1px solid #e2e8f0;}
+.ci-badge{font-size:12px;font-weight:700;}
+.ci-green .ci-badge{color:#15803d;}
+.ci-yellow .ci-badge{color:#b45309;}
+.ci-red .ci-badge{color:#b91c1c;}
+.ci-gray .ci-badge{color:#64748b;}
+.ci-desc{font-size:11.5px;color:var(--text2);}
+.criteria-note{font-size:11px;color:var(--text3);padding-top:8px;border-top:1px solid var(--border);line-height:1.6;};}
 /* SUBGOAL BANNER */
-.pg-banner{border-radius:var(--r);padding:22px 28px;margin-bottom:16px;position:relative;overflow:hidden;}
-.pg-banner::before{content:'';position:absolute;right:-30px;top:-30px;width:160px;height:160px;
-  border-radius:50%;background:rgba(255,255,255,.08);}
+.pg-banner{border-radius:0 0 var(--r) var(--r);padding:28px 28px 24px;margin:-1px 0 16px;position:relative;overflow:hidden;}
+.pg-banner::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;
+  border-radius:50%;background:rgba(255,255,255,.07);}
+.pg-banner::after{content:'';position:absolute;right:80px;bottom:-60px;width:140px;height:140px;
+  border-radius:50%;background:rgba(255,255,255,.04);}
 .pg-inner{position:relative;}
 .pg-sub{font-size:10px;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px;}
 .pg-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:5px;}
@@ -368,12 +398,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <div class="tb-ico" id="tbIco">📊</div>
       <div>
         <div class="tb-title" id="pageTitle">ภาพรวมการขับเคลื่อน SDG4 จังหวัดเชียงใหม่</div>
-        <div class="tb-sub">ตัวชี้วัดเป้าหมายการพัฒนาอย่างยั่งยืน | การศึกษาที่มีคุณภาพ | ปีงบประมาณ 2568</div>
+        <div class="tb-sub" id="pageSub">ตัวชี้วัดเป้าหมายการพัฒนาอย่างยั่งยืน | การศึกษาที่มีคุณภาพ | ปีงบประมาณ 2568</div>
       </div>
     </div>
-    <div style="display:flex;gap:8px">
-      <div class="tb-chip"><span class="dot"></span> ข้อมูลปีงบประมาณ 2568</div>
-      <div class="tb-chip">🎯 เป้าหมาย 2568 & 2573</div>
+    บรรลุ <span style="opacity:.7;font-weight:400">&lt;85%</span></div>
     </div>
   </div>
 
@@ -381,22 +409,26 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
   <!-- OVERVIEW -->
   <div class="page active" id="page-overview">
     <div class="ov-banner">
-      <h1>สภาวการณ์การขับเคลื่อนเป้าหมายการพัฒนาที่ยั่งยืนด้านการศึกษา</h1>
-      <p>ภาพรวมผลการดำเนินงาน SDG4 จังหวัดเชียงใหม่ เทียบกับค่าเป้าหมายที่กำหนด</p>
-      <div class="ov-chips">
-        <span class="ov-chip">ปีข้อมูล: 2568</span>
-        <span class="ov-chip">พื้นที่: จังหวัดเชียงใหม่</span>
-        <span class="ov-chip">แหล่งข้อมูล: SDG4_Dashboard</span>
+      <div class="ov-banner-inner">
+        <div>
+          <h1>สภาวการณ์การขับเคลื่อนเป้าหมายการพัฒนาที่ยั่งยืนด้านการศึกษา</h1>
+          <p>ภาพรวมผลการดำเนินงาน SDG4 จังหวัดเชียงใหม่ เทียบกับค่าเป้าหมายที่กำหนด</p>
+          <div class="ov-chips">
+            <span class="ov-chip">📅 ปีงบประมาณ 2568</span>
+            <span class="ov-chip">📍 จังหวัดเชียงใหม่</span>
+            <span class="ov-chip">🎯 เป้าหมาย 2568 & 2573</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="ov-summary">
       <h3>📋 สรุปภาพรวมผลการดำเนินงาน SDG4 จังหวัดเชียงใหม่ ปีงบประมาณ 2568</h3>
       <p>จากตัวชี้วัดทั้งหมด <strong>36 รายการ</strong> ใน 10 เป้าหมายย่อย พบว่า
-        <span style="color:var(--green);font-weight:700">7 รายการ บรรลุเป้าหมาย</span>
-        <span style="color:var(--yellow);font-weight:700">13 รายการ ใกล้บรรลุเป้าหมาย</span>
-        <span style="color:var(--red);font-weight:700">14 รายการ ยังไม่บรรลุเป้าหมาย</span>
-        และ <span style="color:var(--gray);font-weight:700">2 รายการ ยังไม่มีข้อมูล</span></p>
+        <span style="color:var(--green);font-weight:700">7 รายการ บรรลุเป้าหมาย</span> ·
+        <span style="color:var(--yellow);font-weight:700">13 รายการ ใกล้บรรลุ</span> ·
+        <span style="color:var(--red);font-weight:700">14 รายการ ยังไม่บรรลุ</span> ·
+        <span style="color:var(--gray);font-weight:700">2 รายการ ไม่มีข้อมูล</span></p>
     </div>
 
     <div class="stat-row">
@@ -526,11 +558,27 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
     </div>
 
     <div class="sec-title">📋 ตารางสรุปตัวชี้วัดทั้งหมด ปีงบประมาณ 2568</div>
-    <div class="legend-row">
-      <span class="sbadge sgreen">✓ บรรลุเป้าหมาย</span>
-      <span class="sbadge syellow">⚡ ใกล้บรรลุเป้าหมาย</span>
-      <span class="sbadge sred">✕ ยังไม่บรรลุเป้าหมาย</span>
-      <span class="sbadge sgray">— ไม่มีข้อมูล</span>
+    <div class="criteria-box">
+      <div class="criteria-title">📌 เกณฑ์การจำแนกสถานะตัวชี้วัด</div>
+      <div class="criteria-grid">
+        <div class="criteria-item ci-green">
+          <span class="ci-badge">✓ บรรลุเป้าหมาย</span>
+          <span class="ci-desc">ผลจริง ≥ 100% ของเป้าหมาย</span>
+        </div>
+        <div class="criteria-item ci-yellow">
+          <span class="ci-badge">⚡ ใกล้บรรลุเป้าหมาย</span>
+          <span class="ci-desc">ผลจริง 85–99% ของเป้าหมาย</span>
+        </div>
+        <div class="criteria-item ci-red">
+          <span class="ci-badge">✕ ยังไม่บรรลุเป้าหมาย</span>
+          <span class="ci-desc">ผลจริงต่ำกว่า 85% ของเป้าหมาย</span>
+        </div>
+        <div class="criteria-item ci-gray">
+          <span class="ci-badge">— ไม่มีข้อมูล</span>
+          <span class="ci-desc">อยู่ระหว่างรอข้อมูล</span>
+        </div>
+      </div>
+      <div class="criteria-note">* ตัวชี้วัด GPI ใช้เกณฑ์พิเศษ: บรรลุ = GPI ห่างจาก 1.00 ≤ 0.02 | ใกล้บรรลุ = ห่างจาก 1.00 ≤ 0.15 | ยังไม่บรรลุ = ห่างจาก 1.00 > 0.15</div>
     </div>
     <div style="overflow-x:auto">
       <table class="dtable">
@@ -2431,7 +2479,12 @@ function showPage(id,el){
     goal4b:'SDG 4.b ทุนการศึกษา',goal4c:'SDG 4.c คุณภาพครู',
     'onet-school':'O-NET รายโรงเรียน',
   };
-  document.getElementById('pageTitle').textContent=T[id]||'';
+  const titleEl = document.getElementById('pageTitle');
+  const subEl = document.getElementById('pageSub');
+  const topbar = document.querySelector('.topbar');
+  titleEl.textContent = T[id]||'';
+  if(subEl) subEl.style.display = '';
+  topbar.classList.remove('no-border');
   if(id==='onet-school'){
     if(!onetSchoolPageInited){ onetSchoolPageInited=true; initOnetSchoolPage(); }
     setTimeout(()=>{ renderOnetSchoolPage(); if(onetSchoolMap) onetSchoolMap.invalidateSize(); }, 50);
