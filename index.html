@@ -407,10 +407,7 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
       <div class="stat-card sc-gray"><div class="lbl">ไม่มีข้อมูล</div><div class="val v-gray">2</div><div class="sub">สถานะสีเทา</div></div>
     </div>
 
-    <div class="ov-summary" style="border-left-color:#7c3aed;background:#faf5ff">
-      <h3 style="color:#6d28d9">🔎 สรุปสถานการณ์ก่อนดูกราฟ</h3>
-      <p>ภาพรวมเชิงกราฟสะท้อนว่าเป้าหมายย่อยที่มีความก้าวหน้าค่อนข้างดี ได้แก่ <strong>4.7</strong>, <strong>4.6</strong> ขณะที่เป้าหมายที่ควรเร่งรัดเพิ่มเติม ได้แก่ <strong>4.1</strong>, <strong>4.a</strong>, <strong>4.5</strong> โดยกราฟด้านซ้ายแสดงสัดส่วนสถานะของตัวชี้วัดในแต่ละเป้าหมายย่อย และกราฟใยแมงมุมด้านขวาแสดงระดับความก้าวหน้าเทียบค่าเป้าหมาย</p>
-    </div>
+    
 
     <div class="g2">
       <div class="card">
@@ -522,6 +519,26 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
         <div class="card-head">🕸️ Spider Chart ภาพรวมความก้าวหน้า</div>
         <p style="font-size:12px;color:var(--text3);margin-bottom:8px;">ยิ่งพื้นที่กราฟยื่นออกมาก แสดงว่าเป้าหมายย่อยนั้นเข้าใกล้ค่าเป้าหมายมากขึ้น</p>
         <div class="chart-wrap"><canvas id="radarChart"></canvas></div>
+      </div>
+    </div><div class="ov-summary" style="border-left-color:#7c3aed;background:#faf5ff">
+      <h3 style="color:#6d28d9">🔎 สรุปสถานการณ์</h3>
+      <div style="line-height:1.7">
+        <div style="margin-bottom:10px"><strong style="color:#16a34a">✓ จุดแข็ง (บรรลุแล้ว)</strong>
+          <ul style="margin:6px 0 0 0;padding-left:20px">
+            <li><strong>สภาพแวดล้อมพื้นฐานในโรงเรียน</strong> — น้ำดื่มสะอาด, สิ่งอำนวยความสะดวก (4.a) ครบ 100%</li>
+            <li><strong>การเรียนต่ออุดมศึกษา</strong> และ <strong>การพัฒนาฝีมือแรงงาน</strong> (4.3, 4.4) เกินเป้า</li>
+            <li><strong>O-NET ม.3 คณิตศาสตร์</strong> โดดเด่น (สูงกว่าเป้ามาก)</li>
+          </ul>
+        </div>
+        <div style="margin-bottom:10px"><strong style="color:#dc2626">⚠ จุดที่ต้องเร่งรัดที่สุด (ห่างเป้ามาก)</strong>
+          <ol style="margin:6px 0 0 0;padding-left:20px">
+            <li><strong>โครงสร้างดิจิทัลในโรงเรียน</strong> — คอมพิวเตอร์เพียง 43% ของเป้า, อินเทอร์เน็ต 56% (ช่องว่างดิจิทัลในพื้นที่ห่างไกลชัดเจน)</li>
+            <li><strong>คุณภาพการเรียนรู้ (O-NET) ม.ปลาย</strong> — คณิต/ไทย อยู่ที่ 62–63% ของเป้า</li>
+            <li><strong>พัฒนาการเด็กปฐมวัย</strong> — 69% ของเป้า และมีแนวโน้มลดลงต่อเนื่อง (น่ากังวล)</li>
+            <li><strong>O-NET ป.6</strong> — 70–74% ของเป้า</li>
+          </ol>
+        </div>
+        <p style="margin:0"><strong>สรุป:</strong> โครงสร้างพื้นฐานและการเข้าถึงการศึกษาต่ออยู่ในเกณฑ์ดี แต่<strong>คุณภาพการเรียนรู้ (โดยเฉพาะ ม.ปลาย)</strong> และ<strong>ความพร้อมดิจิทัล</strong> คือสองเรื่องที่ควรเป็นวาระเร่งด่วน และควรจับตา<strong>พัฒนาการปฐมวัย</strong>ที่มีสัญญาณถดถอย</p>
       </div>
     </div>
 
